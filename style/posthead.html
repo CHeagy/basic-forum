@@ -1,0 +1,31 @@
+<div class="my-3 p-3 bg-white rounded box-shadow">
+
+	<?php if(isset($_GET['t'])) { ?>
+	
+	<div class="container border-bottom border-gray">
+		<div class="row justify-content-start">
+			<div class="col-10">
+				<h6>Back to <a href="view.php?f=<?php echo $view['id'];?>"><?php echo $view['name']; ?></a></h6>
+				<h5 class="pb-2 mb-0"><?=$post['title']?></h5>
+			</div>
+			<?php if(isset($_SESSION['loggedin']) AND $_SESSION['loggedin'] == 1) { ?>
+			<div class="col-2">
+				<a href="post.php?a=np&t=<?=$post['id']?>" class="btn btn-outline-primary btn-sm">New Post</a>
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+	<?php } else { ?>
+	<div class="container border-bottom border-gray">
+		<div class="row justify-content-start">
+			<div class="col-10">
+				<h5 class="pb-2 mb-0">Discussions</h5>
+			</div>
+			<?php if(isset($_SESSION['loggedin']) AND $_SESSION['loggedin'] == 1) { ?>
+			<div class="col-2">
+				<a href="post.php?a=nt&f=<?=$_GET['f']?>" class="btn btn-outline-primary btn-sm">New Topic</a>
+			</div>
+			<?php } ?>		
+		</div>
+	</div>
+	<?php } ?>

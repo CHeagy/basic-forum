@@ -1,0 +1,4 @@
+<h1 class="h5 mb-5 font-weight-normal alert alert-success"><?php echo $master->messages->loginGood . " Welcome " . $_SESSION['username'] ."!"; ?></h1>
+
+<script>var delay = 1500; 
+setTimeout(function(){ window.location = "<?=$config['base']?>view.php"; }, delay); </script>

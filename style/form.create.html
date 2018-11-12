@@ -1,0 +1,17 @@
+<link href="style/css/signin.css" rel="stylesheet">
+
+
+
+<form class="form-signin" action="account.php?a=create" method="post">
+  <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
+  <?php if (isset($_SESSION['message']) and $_SESSION['message'] != ""  ) { 
+echo "<h1 class=\"h5 mb-5 font-weight-normal alert alert-danger\">" . $_SESSION['message'] . "</h1>";
+} ?>
+  <input type="name"      name="username"       id="inputTop"   class="form-control" value="<?=(isset($_SESSION['username'])) ? $_SESSION['username'] : "" ?>" placeholder="Username" required autofocus>
+  <input type="password"  name="password"       id="inputMid"   class="form-control" placeholder="Password" required>
+  <input type="password"  name="verifyPassword" id="inputMid"   class="form-control" placeholder="Verify Password" required>
+  <input type="email"     name="email"          id="inputMid"   class="form-control" value="<?=(isset($_SESSION['email'])) ? $_SESSION['email'] : "" ?>" placeholder="Email" required>
+  <input type="email"     name="verifyEmail"    id="inputBot"   class="form-control" value="<?=(isset($_SESSION['verifyEmail'])) ? $_SESSION['verifyEmail'] : "" ?>" placeholder="Verify Email" required>
+  <br />    
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+</form>

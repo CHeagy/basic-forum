@@ -1,0 +1,31 @@
+	<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+		<a class="navbar-brand" href="view.php"><?=$master->config['fname']?></a>
+
+		<div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+					<a class="nav-link" href="view.php">Home</a>
+				</li>
+				<?php if (!isset($_SESSION['loggedin']) or ($_SESSION['loggedin'] != true)) { ?>
+				<li class="nav-item">
+					<a class="nav-link" href="account.php?a=login">Log in</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="account.php?a=newform">Create an account</a>
+				</li>
+				<?php } else { ?>
+				<li class="nav-item">
+					<a class="nav-link" href="account.php?a=logout">Log out</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="account.php?a=edit"><?=$master->user['username'];?></a>
+				</li>
+				<?php } ?>
+			</ul>
+			<form class="form-inline my-2 searchbox my-lg-0">
+				<input class="form-control mr-sm-2 searchbox" type="text" disabled id="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" disabled type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	<main role="main" class="container">

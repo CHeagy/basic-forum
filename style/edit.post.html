@@ -1,0 +1,31 @@
+<?php
+$edit = false;
+
+if(($master->user['rank'] > 2 AND $master->user['rank'] > $user['rank']) or $user['username'] == $_SESSION['username']) {
+	$edit = true;
+} 
+
+if($edit == false) {
+	header('Location: error.php?e=unknownError');
+}
+?>
+
+<div class="my-3 p-3 bg-white rounded box-shadow">
+	<form class="form-signin" action="post.php?a=ep" method="post">
+		<h1 class="h3 mb-3 font-weight-normal">Edit post</h1>
+		<input type="text" name="title" id="inputTop" class="form-control" placeholder="Title" value="<?=$post['title']?>" disabled>
+		<textarea rows="5" cols="100" name="message" id="inputBot" class="form-control" placeholder="Message" autofocus required ><?=$post['text'];?></textarea>
+		<input type="hidden" name="p" value="<?=$post['id']?>" />
+		<br />		
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+	</form>
+</div>
+
+<script>
+	var input=document.getElementById('inputBot');
+
+	input.focus(); //sets focus to element
+	var val = this.input.value; //store the value of the element
+	this.input.value = ''; //clear the value of the element
+	this.input.value = val; //set that value back.
+</script>

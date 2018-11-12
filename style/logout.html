@@ -1,0 +1,12 @@
+<?php
+if($message == "logInToLogOut") {
+	echo "<div class=\"alert alert-warning\">" . $master->messages->logInToLogOut . "</div>";
+} else if($message == "logoutFailed") {
+	echo "<div class=\"alert alert-danger\">" . $master->messages->logoutFailed . "</div>";
+} else {
+	echo "<div class=\"alert alert-success\">" . $master->messages->logoutGood . $username . "!</div>";
+	?>
+	<script>var delay = 1500; setTimeout(function(){ window.location = "<?=$config['base']?>view.php"; }, delay); </script>
+	<?php
+}
+?>

@@ -1,0 +1,5 @@
+	<div class="my-3 p-3 bg-white rounded box-shadow">
+		<?php if ($result['id'] != "1") { ?>
+		<p class="small">Back to <a href="view.php?f=<?php echo $view['id'];?>"><?php echo $view['name']; ?></a></p>
+		<?php } ?>
+		<h4 class="border-bottom border-gray pb-2 mb-0"><?=$result['name']?></h4>

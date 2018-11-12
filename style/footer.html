@@ -1,0 +1,39 @@
+<!--</main>
+
+<footer class="footer">
+      <div class="container">
+        <span class="text-muted"><?php if (!isset($_SESSION['loggedin']) or ($_SESSION['loggedin'] != true)) { 
+?>
+<a href="account.php?action=login">Log in</a> - <a href="account.php?action=newform">Create a new account</a>
+<?php } else { ?>
+<a href="account.php?action=logout">Log out</a>
+<?php } ?>
+ - <a href="/forum/">Home</a> - <a href="/forum/view.php">Forums</a></span>
+      </div>
+    </footer>	
+</body>-->
+
+
+		</main>
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="style/js/holder.min.js"></script>
+		<script src="style/js/offcanvas.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$(".searchbox").hover(function() {	
+					$(".searchbox > input").attr("placeholder", "lolno");
+				}, function() {
+					$(".searchbox > input").attr("placeholder", "Search");
+				});
+			});
+		</script>
+	</body>
+</html>

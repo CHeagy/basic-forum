@@ -1,0 +1,10 @@
+<div class="my-3 p-3 bg-white rounded box-shadow">
+	<form class="form-signin" action="post.php?a=cp" method="post">
+		<h1 class="h3 mb-3 font-weight-normal">Add new post</h1>
+		<input type="text" name="title" id="inputTop" class="form-control" placeholder="Title" value="<?=$info['title']?>" disabled>
+		<textarea rows="5" cols="100" name="message" id="inputBot" class="form-control" placeholder="Message" required autofocus></textarea>
+		<input type="hidden" name="t" value="<?=$info['id']?>" />
+		<br />		
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+	</form>
+</div>
