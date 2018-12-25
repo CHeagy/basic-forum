@@ -13,7 +13,7 @@ $config['dbhost'] = "localhost";
 $config['dbname'] = "devforum";
 
 # Database Username
-$config['dbusername'] = "github";
+$config['dbusername'] = "username";
 
 # Database Password
 $config['dbpassword'] = "password";

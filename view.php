@@ -27,7 +27,9 @@ if(isset($_GET['f'])) {
 	$view->displayTopicInfo($master, $_GET['t']);
 	$view->displayComments($master, $_GET['t']);
 } else {
-	header('Location: view.php?f=1');
+	$view->displayParent($master, 1);
+	$view->displayCategories($master, 1);
+	include("style/catfoot.html");
 }
 
 include("style/footer.html");
